@@ -42,7 +42,7 @@ else:
         env.Append(CPPPATH=["zeromq-4.2.0/include"])
     conf.Finish()
 
-env.Append(CPPPATH="../../src")
+env.Append(CPPPATH="../../common")
 env.Append(LIBS=[x for x in [libzeromq] if x])
 if sys.platform == "win32":
     env.Append(LIBS=["advapi32", "wsock32", "ws2_32"])
