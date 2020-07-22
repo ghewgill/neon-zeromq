@@ -31,14 +31,14 @@ else:
         tarfile.open("zeromq-4.2.0.tar.gz").extractall(".")
 
 if sys.platform == "win32":
-    libzeromq = libzeromqenv.Command("libzmq/bin/x64/Debug/v120/static/libzmq.lib", "libzmq/builds/msvc/build/buildall.bat", "cd lib/zeromq/libzmq/builds/msvc/build && buildall.bat")
+    libzeromq = libzeromqenv.Command("libzmq/bin/x64/Debug/v120/static/libzmq.lib", "libzmq/builds/msvc/build/buildall.bat", "cd libzmq/builds/msvc/build && buildall.bat")
     env.Append(CPPPATH=["libzmq/include"])
     env.Append(CPPFLAGS=["-DZMQ_STATIC"])
     env.Append(LIBS=["iphlpapi"])
 else:
     conf = Configure(env)
     if not conf.CheckLibWithHeader("zmq", "zmq.h", "C++"):
-        libzeromq = libzeromqenv.Command("zeromq-4.2.0/src/.libs/libzmq.a", "zeromq-4.2.0/configure", "cd lib/zeromq/zeromq-4.2.0 && ./configure --enable-static --with-pic=yes && make")
+        libzeromq = libzeromqenv.Command("zeromq-4.2.0/src/.libs/libzmq.a", "zeromq-4.2.0/configure", "cd zeromq-4.2.0 && ./configure --enable-static --with-pic=yes && make")
         env.Append(CPPPATH=["zeromq-4.2.0/include"])
     conf.Finish()
 

@@ -1,0 +1,9 @@
+image: archlinux
+packages:
+- scons
+sources:
+- https://github.com/ghewgill/neon-zeromq
+tasks:
+- build: |
+    cd neon-zeromq
+    scons
