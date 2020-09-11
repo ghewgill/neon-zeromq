@@ -76,7 +76,7 @@ DECLARE EXTENSION FUNCTION zmq_ctx_shutdown(context: Context)
 DECLARE EXTENSION FUNCTION zmq_ctx_term(context: Context)
 DECLARE EXTENSION FUNCTION zmq_curve_keypair(OUT z85_public_key: String, OUT z85_secret_key: String)
 DECLARE EXTENSION FUNCTION zmq_disconnect(socket: Socket, endpoint: String)
-# getsockopt
+-- getsockopt
 DECLARE EXTENSION FUNCTION zmq_msg_close(msg: Message)
 DECLARE EXTENSION FUNCTION zmq_msg_copy(dest: Message, src: Message)
 DECLARE EXTENSION FUNCTION zmq_msg_data(msg: Message): Bytes
@@ -95,8 +95,8 @@ DECLARE EXTENSION FUNCTION zmq_proxy_steerable(frontend: Socket, backend: Socket
 DECLARE EXTENSION FUNCTION zmq_proxy(frontend: Socket, backend: Socket, capture: Socket)
 DECLARE EXTENSION FUNCTION zmq_recv(socket: Socket, len: Number, flags: Number): Bytes
 DECLARE EXTENSION FUNCTION zmq_send(socket: Socket, buf: Bytes, flags: Number)
-# setsockopt
-# socket_monitor
+-- setsockopt
+-- socket_monitor
 DECLARE EXTENSION FUNCTION zmq_socket(context: Context, type: Number): Socket
 DECLARE EXTENSION FUNCTION zmq_strerror(errnum: Number): String
 DECLARE EXTENSION FUNCTION zmq_unbind(socket: Socket, endpoint: String)
