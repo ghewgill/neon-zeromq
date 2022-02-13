@@ -41,9 +41,9 @@ EXPORT zmq_z85_encode
 
 EXCEPTION ZeromqException
 
-TYPE Context IS POINTER
-TYPE Message IS POINTER
-TYPE Socket IS POINTER
+TYPE Context IS Object
+TYPE Message IS Object
+TYPE Socket IS Object
 
 TYPE PollItem IS RECORD
     socket: Socket
